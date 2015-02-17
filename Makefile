@@ -4,15 +4,20 @@
 sources=choice-interaction.md text-interaction.md inline-choice-interaction.md
 # targets
 html_targets=$(sources:.md=.html)
-
+docx_targets=$(sources:.md=.docx)
+targets=$(html_targets) $(docx_targets)
 # implicit rules
 %.html: %.md
 	pandoc -s -w html5 $< -o $@
+%.docx: %.md
+	pandoc -s -w docx $< -o $@
 
 # targets
-.PHONY: clean
+.PHONY: clean all docx
 
-all: $(html_targets)
+all: $(targets)
 
 clean: 
-	rm -f $(html_targets)
+	rm -f $(targets)
+
+docx: $(docx_targets)
