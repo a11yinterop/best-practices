@@ -35,6 +35,9 @@ If the state of an interactive control is changed from unchecked to checked or f
 ### Example
 [insert visual example and code sample here]
 
+### Implementation Notes
+Some combinations of user agent and screen reader do not reliably report the number of buttons in a radio group or the position in the group of the button that has the keyboard focus. To work around this limitation, authors should consider specifying the `aria-posinset` and `aria-setsize` properties of the element of role `radio` and `radiogroup`, respectively.
+
 ## Choice Interaction: Multiple Selection
 
 ### Markup
@@ -52,3 +55,6 @@ If the state of an interactive control is changed from unchecked to checked or f
 
 ### Example
 [Insert visual example and code sample here.]
+
+### Implementation Notes
+Some combinations of user agent and screen reader report the number of check boxes in a group and the position in the group of the check box that has the keyboard focus, if the `aria-posinset` and `aria-setsize` properties are specified on elements of role `checkbox` and `group`, respectively. Implementors who take advantage of this functionality should note that the WAI-ARIA 1.0 specification does not allow these properties to be applied to elements with group or checkbox roles and that their use in this context may cease to be supported by user agents and assistive technologies in the future.
