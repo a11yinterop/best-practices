@@ -35,6 +35,8 @@ The text entry interaction must be implemented as one or more elements,[^2] each
 
 If a custom control with a tool bar or menu of editing commands is supplied, then the tool bar or menu and its components must be assigned the roles defined in the ARIA specification for these respective purposes. States and properties must be assigned as required, and updated as the user interacts with these components.
 
+If the specific context of use does not allow the use of spelling or grammar checking facilities, the `spellcheck` attribute with a value of `false` should be used in conjunction with the `contenteditable`.
+
 ## Presentation
 A variety of presentations is possible depending upon the features chosen for inclusion in the extended text interaction. It may be as simple as a text entry field or as complex as a document editing tool.
 
