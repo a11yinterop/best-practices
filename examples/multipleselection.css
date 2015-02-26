@@ -1,0 +1,45 @@
+/* Copyright (C)  2015 by Educational Testing Service. All rights reserved.
+ *
+ * To the maximum extent permitted by applicable law, this work is
+ * provided as is, without any express or implied warranty of any kind.
+ *This work is contributed to IMS Global Learning Consortium Inc.
+ * pursuant to the terms of the IMS Intellectual Property Rights Policy. */
+
+li[role="radio"]:first-child {
+	background-color: white;
+	color: black;
+	text-decoration: none; 
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+	padding-right: 0.375em;
+	padding-left: 0.375em;
+	border: 0.1em solid black;
+	-webkit-border-radius: 0.625em; /* Safari and Chrome rounded corners */
+    -moz-border-radius: 0.625em; /* Firefox rounded corners */
+    border-radius: 0.625em; /* Opera rounded corners */
+	margin-right: 0.8em;
+}
+
+li[role="radio"][aria-checked="true"] {
+	background-color: black;
+	color: white;
+	text-decoration: none; 
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+	padding-right: 0.375em;
+	padding-left: 0.375em;
+	border: 0.1em solid black;
+	-webkit-border-radius: 0.625em; /* Safari and Chrome rounded corners */
+    -moz-border-radius: 0.625em; /* Firefox rounded corners */
+    border-radius: 0.625em; /* Opera rounded corners */
+	margin-right: 0.8em;
+}
+
+body {font-family: Arial, Helvetica, sans-serif; font-size: 1em;}
+
+
+li[role="radio"] { list-style-type: none; line-height: 3em;}
+ul[role="group"] {margin: 0 auto; width: 20%;}
+
+#chA, #chB, #chC, #chD {padding: 1em;}
+
