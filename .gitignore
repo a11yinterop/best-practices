@@ -1,4 +1,4 @@
 *.html
-!examples/*.html
+!examples/**/*.html
 *.docx
 
