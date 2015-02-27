@@ -56,8 +56,48 @@ radioButtons.selectIt = function (e) {
 	    button.setAttribute('aria-checked', 'true');
     // Otherwise, deselect it.
     else button.setAttribute('aria-checked', 'false');
+
+    // Signal a state change.
+    if (e.target.id)
+	radioButtons.performActions(e.target.id);
 };
 
+// Create an emptyset of actions (call-back functions) to be executed upon state changes.
+radioButtons.actions = {};
+
+// Register an action.
+radioButtons.addAction = function (buttonId, action) {
+    if (!radioButtons.actions[buttonId]) {
+	radioButtons.actions[buttonId] = [action];
+	return;
+    }
+    radioButtons.actions[buttonId].push(action);
+};
+
+// Perform all actions associated with the specified element (designated by id).
+
+radioButtons.performActions = function (buttonId) {
+    var actions = radioButtons.actions[buttonId];
+    if (!actions)
+	return;
+    var button = document.getElementById(buttonId);
+    if (!button)
+	return;
+
+    actions.forEach(function (action) {
+	action(button);
+    });
+};
+
+radioButtons.removeAction = function (buttonId, action) {
+    var actions = radioButtons.actions[buttonId];
+    if (!actions)
+	return;
+    var index = actions.indexOf(action);
+    if (index >= 0)
+	actions.splice(index, 1);
+};
+    
 // Add event listeners to a group of radio buttons.
 
 radioButtons.addListeners = function (radioGroup) {
