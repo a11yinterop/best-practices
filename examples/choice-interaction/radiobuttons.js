@@ -82,7 +82,7 @@ radioButtons.performActions = function (buttonId) {
 	return;
     var button = document.getElementById(buttonId);
     if (!button)
-	return;
+	throw new Error('Radio button with id ' + buttonId + ' not found');
 
     actions.forEach(function (action) {
 	action(button);
