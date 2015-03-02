@@ -5,7 +5,8 @@
  *This work is contributed to IMS Global Learning Consortium Inc.
  * pursuant to the terms of the IMS Intellectual Property Rights Policy. */
 
-div[role="textbox"] { border: 2px black solid; padding: 5px; height: 80%}
+div[role="textbox"] { border: 2px black solid; padding: 5px; height: 80%; 
+	white-space: pre-wrap;}
 ul[role="toolbar"] { list-style-type: none;}
 ul[role="toolbar"]>button } display: inline;}
 					     
