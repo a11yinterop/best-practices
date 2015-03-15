@@ -1,7 +1,8 @@
 # makefile for Best Practices
 #
 # define the source files
-sources=$(wildcard *.md)
+exclusions=README.md
+sources=$(filter-out $(exclusions), $(wildcard *.md))
 # targets
 html_targets=$(sources:.md=.html)
 docx_targets=$(sources:.md=.docx)
