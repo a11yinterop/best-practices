@@ -62,7 +62,7 @@ radioButtons.selectIt = function (e) {
 	radioButtons.performActions(e.target.id);
 };
 
-// Create an emptyset of actions (call-back functions) to be executed upon state changes.
+// Create an emptys et of actions (call-back functions) to be executed upon state changes.
 radioButtons.actions = {};
 
 // Register an action.
@@ -101,15 +101,17 @@ radioButtons.removeAction = function (buttonId, action) {
 // Add event listeners to a group of radio buttons.
 
 radioButtons.addListeners = function (radioGroup) {
+    var keyDownListener = function (e) {
+        radioButtons.handleKeyDown(e);
+    };
+    var clickListener = function (e) {
+        radioButtons.selectIt(e);
+    };
     var buttons = radioGroup.querySelectorAll('[role="radio"]');
     for (var i = 0; i < buttons.length; i++) {
 	var button = buttons[i];
-	button.addEventListener('keydown', function (e) {
-	    radioButtons.handleKeyDown(e);
-	}, false);
-	button.addEventListener('click', function (e) {
-	    radioButtons.selectIt(e);
-	}, false);
+	button.addEventListener('keydown', keyDownListener, false);
+	button.addEventListener('click', clickListener, false);
     }
 };
 

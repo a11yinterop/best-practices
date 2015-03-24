@@ -56,12 +56,13 @@ checkBoxes.handleKeyDown = function (e) {
 
 window.addEventListener('load', function (e) {
     var boxes = document.querySelectorAll('li[role="checkbox"]');
+    var handleClick = function (e) {
+        checkBoxes.toggleState(e.target);
+        e.stopPropagation();
+    };
     for (var i = 0; i < boxes.length; i++) {
 	boxes[i].addEventListener('keydown', checkBoxes.handleKeyDown, false);
-	boxes[i].addEventListener('click', function (e) {
-	checkBoxes.toggleState(e.target);
-	e.stopPropagation();
-}, false);
+	boxes[i].addEventListener('click', handleClick, false);
 	}
 }, false);
 			  
