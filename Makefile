@@ -34,7 +34,7 @@ check:
 	@scripts=$$(find examples -name '*.js') ; \
 	for script in $$scripts ; do \
 	echo Checking $$script ; \
-	jshint $$script || exit $? ; \
+	jshint $$script || exit $$? ; \
 	echo ; \
 	done
 
