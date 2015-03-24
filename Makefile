@@ -16,11 +16,19 @@ metadata=-M date="$(shell date +"%d %B %Y")"
 	pandoc -s -w docx $(metadata) $< -o $@
 
 # targets
-.PHONY: clean all docx
+.PHONY: clean all docx check
 
 all: $(targets)
 
 clean: 
 	rm -f $(targets)
+
+check:
+	@scripts=$$(find examples -name '*.js') ; \
+	for script in $$scripts ; do \
+	echo Checking $$script ; \
+	jshint $$script || exit $? ; \
+	echo ; \
+	done
 
 docx: $(docx_targets)
