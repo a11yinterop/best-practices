@@ -1,5 +1,12 @@
 # makefile for Best Practices
 #
+# Copyright (C)  2015 by Educational Testing Service. All rights reserved.
+#
+# To the maximum extent permitted by applicable law, this work is
+# provided as is, without any express or implied warranty of any kind.
+# This work is contributed to IMS Global Learning Consortium Inc.
+# pursuant to the terms of the IMS Intellectual Property Rights Policy.
+#
 # define the source files
 exclusions=README.md
 sources=$(filter-out $(exclusions), $(wildcard *.md))
