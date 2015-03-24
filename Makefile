@@ -7,11 +7,13 @@ sources=$(filter-out $(exclusions), $(wildcard *.md))
 html_targets=$(sources:.md=.html)
 docx_targets=$(sources:.md=.docx)
 targets=$(html_targets) $(docx_targets)
+# Set document metadata
+metadata=-M date="$(shell date +"%d %B %Y")"
 # implicit rules
 %.html: %.md
-	pandoc -s -w html5 $< -o $@
+	pandoc -s -w html5 $(metadata) $< -o $@
 %.docx: %.md
-	pandoc -s -w docx $< -o $@
+	pandoc -s -w docx $(metadata) $< -o $@
 
 # targets
 .PHONY: clean all docx
